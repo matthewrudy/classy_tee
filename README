@@ -1,13 +1,27 @@
 ClassyTee
 =========
 
-Introduction goes here.
-
+Classy Tee bring Class Table Inheritance to ActiveRecord and Rails in as simple a way possible.
 
 Example
 =======
 
-Example goes here.
+if you have an existing model
+  class Content < ActiveRecord::Base
+  end
 
+and you want to extend it.
+Maybe you want to add a subclass that encapsulates all the logic of an MP3
 
-Copyright (c) 2008 [name of plugin creator], released under the MIT license
+  class MP3Content < ActiveRecord::Base
+    classy_tee!
+  end
+
+this will look for a MP3ContentExtensions class,
+and add all of its columns as though they were on the :content table.
+
+Generate this automatically
+
+  ruby script/generate classy_tee MP3Content mp3_url:string mp3_length:integer
+
+Copyright (c) 2008 [Matthew Rudy Jacobs], released under the MIT license
