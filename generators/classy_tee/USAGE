@@ -1,0 +1,17 @@
+Description:
+    Generate a ClassyTee table to bring Class Table Inheritance to your application
+
+Example:
+    ./script/generate classy_tee MP3Content mp3_url:string
+
+    This will create:
+      create  app/models/mp3_content_extension.rb
+      create  test/fixtures/mp3_content_extensions.yml
+      create  test/models/mp3_content_extension_test.rb
+      create  db/migrate/20081207170326_create_mp3_content_extensions.rb
+
+    Now just make sure you have an MP3Content model
+      class MP3Content < Content
+        classy_tee!
+      end
+    And you're done.
